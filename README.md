@@ -54,7 +54,7 @@ This repository contains Android development examples and tutorials for various 
 
 ## Audio Recording 
 
-- **Audio**: This section provides examples of how to record audio files in Android applications using various techniques and libraries.
+- **Audio Recording**: This section provides examples of how to record audio files in Android applications using various techniques and libraries.
 
 ## Constraint Layout
 
