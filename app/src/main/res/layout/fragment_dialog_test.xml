@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.krishworld.hiltexample.ui.dialog.viewmodel.DialogTestViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/alertDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s_vertical_spacing"
+            android:onClick="@{(view)-> viewmodel.showAlertDialog()}"
+            android:text="@string/alert_dialog"
+            app:layout_constraintBottom_toTopOf="@+id/customDialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Button
+            android:id="@+id/customDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s_vertical_spacing"
+            android:onClick="@{(view)-> viewmodel.showCustomDialog()}"
+            android:text="@string/custom_dialog"
+            app:layout_constraintBottom_toTopOf="@+id/bottomSheetDialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alertDialog" />
+
+        <Button
+            android:id="@+id/bottomSheetDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s_vertical_spacing"
+            android:onClick="@{(view)-> viewmodel.showBottomSheetDialog()}"
+            android:text="@string/bottomsheet_dialog"
+            app:layout_constraintBottom_toTopOf="@+id/fullScreenDialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customDialog" />
+
+        <Button
+            android:id="@+id/fullScreenDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s_vertical_spacing"
+            android:onClick="@{(view)-> viewmodel.showFullScreenDialog()}"
+            android:text="@string/fullscreen_dialog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottomSheetDialog" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

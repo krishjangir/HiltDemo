@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.krishworld.hiltexample.ui.localization.LocalizationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/translation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s_vertical_spacing"
+            android:text="@string/translations"
+            app:layout_constraintBottom_toTopOf="@+id/hindi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Button
+            android:id="@+id/hindi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s_vertical_spacing"
+            android:onClick="@{(view)-> viewmodel.setHindi()}"
+            android:text="@string/hindi"
+            app:layout_constraintBottom_toTopOf="@+id/english"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/translation" />
+
+        <Button
+            android:id="@+id/english"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s_vertical_spacing"
+            android:onClick="@{(view)-> viewmodel.setEnglish()}"
+            android:text="@string/english"
+            app:layout_constraintBottom_toTopOf="@+id/french"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hindi" />
+
+        <Button
+            android:id="@+id/french"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s_vertical_spacing"
+            android:onClick="@{(view)-> viewmodel.setFrench()}"
+            android:text="@string/french"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/english" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

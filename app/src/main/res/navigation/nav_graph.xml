@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SplashFragment">
+
+    <fragment
+        android:id="@+id/SplashFragment"
+        android:name="com.krishworld.hiltexample.ui.splash.SplashFragment"
+        android:label="@string/splash_fragment_label"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_SplashFragment_to_LocalizationFragment"
+            app:destination="@id/LocalizationFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.krishworld.hiltexample.ui.main.MainFragment"
+        android:label="@string/main_fragment_label"
+        tools:layout="@layout/fragment_main" />
+
+    <fragment
+        android:id="@+id/ThemeFragment"
+        android:name="com.krishworld.hiltexample.ui.themes.ThemeFragment"
+        android:label="@string/themes"
+        tools:layout="@layout/fragment_theme" />
+
+
+    <fragment
+        android:id="@+id/ViewpagerFragment"
+        android:name="com.krishworld.hiltexample.ui.viewpager.ViewpagerFragment"
+        android:label="@string/viewpager_fragment_label"
+        tools:layout="@layout/fragment_viewpager" />
+
+    <fragment
+        android:id="@+id/WorkManagerFragment"
+        android:name="com.krishworld.hiltexample.ui.workmanager.WorkManagerFragment"
+        android:label="@string/workmanager_fragment_label"
+        tools:layout="@layout/fragment_workmanager" />
+
+    <fragment
+        android:id="@+id/LocalizationFragment"
+        android:name="com.krishworld.hiltexample.ui.localization.LocalizationFragment"
+        android:label="@string/localization"
+        tools:layout="@layout/fragment_localization" />
+
+    <fragment
+        android:id="@+id/VideoFragment"
+        android:name="com.krishworld.hiltexample.ui.video.VideoFragment"
+        android:label="@string/videos"
+        tools:layout="@layout/fragment_video" />
+
+    <fragment
+        android:id="@+id/NetworkApiFragment"
+        android:name="com.krishworld.hiltexample.ui.networapikcall.NetworkApiFragment"
+        android:label="@string/posts"
+        tools:layout="@layout/fragment_network_api" />
+
+    <fragment
+        android:id="@+id/DialogTestFragment"
+        android:name="com.krishworld.hiltexample.ui.dialog.DialogTestFragment"
+        android:label="@string/dialogs"
+        tools:layout="@layout/fragment_dialog_test" />
+
+    <fragment
+        android:id="@+id/AnimationFragment"
+        android:name="com.krishworld.hiltexample.ui.animation.AnimationFragment"
+        android:label="@string/animation"
+        tools:layout="@layout/fragment_animation" />
+
+    <fragment
+        android:id="@+id/AudioRecorderFragment"
+        android:name="com.krishworld.hiltexample.ui.audio.AudioRecorderFragment"
+        android:label="@string/audio"
+        tools:layout="@layout/fragment_audio_recorder" />
+
+    <fragment
+        android:id="@+id/CoroutinesFragment"
+        android:name="com.krishworld.hiltexample.ui.coroutine.CoroutinesFragment"
+        android:label="@string/coroutines"
+        tools:layout="@layout/fragment_coroutines" />
+
+</navigation>

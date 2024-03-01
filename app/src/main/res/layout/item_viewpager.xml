@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.krishworld.hiltexample.ui.viewpager.viewmodel.ViewPagerViewModel" />
+
+        <variable
+            name="video"
+            type="com.krishworld.hiltexample.ui.viewpager.utility.ViewPagerUiModel.VideosUiModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/video_item_view_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <androidx.media3.ui.PlayerView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAccessibility="no"
+            android:onClick="@{(view)->viewModel.playPauseVideo()}"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:resize_mode="fill"
+            app:scrubber_color="@color/black_overlay"
+            app:scrubber_enabled_size="@dimen/l_horizontal_spacing"
+            app:use_controller="false" />
+
+        <ImageView
+            android:id="@id/exo_play"
+            android:layout_width="@dimen/xxxl_horizontal_spacing"
+            android:layout_height="@dimen/xxxl_vertical_spacing"
+            android:onClick="@{(view)->viewModel.playVideo()}"
+            android:padding="@dimen/xs_horizontal_spacing"
+            android:src="@drawable/ic_play"
+            android:tintMode="src_in"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/red" />
+
+        <ImageView
+            android:id="@id/exo_pause"
+            android:layout_width="@dimen/xxxl_horizontal_spacing"
+            android:layout_height="@dimen/xxxl_vertical_spacing"
+            android:onClick="@{(view)->viewModel.pauseVideo()}"
+            android:padding="@dimen/xs_horizontal_spacing"
+            android:src="@drawable/ic_pause"
+            android:tintMode="src_in"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/video_title_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/l_vertical_spacing"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingHorizontal="@dimen/m_horizontal_spacing"
+            android:text="@{video.videos.title}"
+            android:textSize="@dimen/text_size_18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Video title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.krishworld.hiltexample.ui.themes.ThemeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.themes.ThemeFragment">
+
+        <Button
+            android:id="@+id/darkTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s_vertical_spacing"
+            android:onClick="@{(view)-> viewmodel.setDarkMode()}"
+            android:text="@string/dark_theme"
+            app:layout_constraintBottom_toTopOf="@+id/lightTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Button
+            android:id="@+id/lightTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s_vertical_spacing"
+            android:onClick="@{(view)-> viewmodel.setLightMode()}"
+            android:text="@string/light_theme"
+            app:layout_constraintBottom_toTopOf="@+id/systemTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/darkTheme" />
+
+        <Button
+            android:id="@+id/systemTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s_vertical_spacing"
+            android:onClick="@{(view)-> viewmodel.setSystemThemeMode()}"
+            android:text="@string/system_theme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lightTheme" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

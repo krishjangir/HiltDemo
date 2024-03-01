@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.audio.AudioRecorderFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.krishworld.hiltexample.ui.audio.viewmodel.AudioRecorderViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/audio_recorder_bg">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cancel"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/l_vertical_spacing"
+            android:layout_marginTop="@dimen/l_vertical_spacing"
+            android:onClick="@{(view)->viewModel.cancelRecording()}"
+            android:src="@drawable/ic_cancel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/microphone"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/xl8_vertical_spacing"
+            android:src="@drawable/ic_microphone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cancel" />
+
+        <TextView
+            android:id="@+id/minutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"
+            android:textColor="@color/white"
+            android:textSize="60sp"
+            app:layout_constraintEnd_toStartOf="@+id/timerUnitMinutes"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/microphone"
+            tools:text="00" />
+
+        <TextView
+            android:id="@+id/timerUnitMinutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="m"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@id/minutes"
+            app:layout_constraintEnd_toStartOf="@+id/seconds"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/minutes"
+            app:layout_constraintTop_toBottomOf="@+id/microphone"
+            tools:text="m" />
+
+        <TextView
+            android:id="@+id/seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:text="00"
+            android:textColor="@color/white"
+            android:textSize="60sp"
+            app:layout_constraintEnd_toStartOf="@+id/timerUnitSeconds"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/timerUnitMinutes"
+            app:layout_constraintTop_toBottomOf="@+id/microphone"
+            tools:text="00" />
+
+        <TextView
+            android:id="@+id/timerUnitSeconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="s"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@id/seconds"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/seconds"
+            app:layout_constraintTop_toBottomOf="@+id/microphone"
+            tools:text="s" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/start"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="60dp"
+            android:onClick="@{(view)->viewModel.startRecording()}"
+            android:src="@drawable/ic_record"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/stop"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="60dp"
+            android:onClick="@{(view)->viewModel.stopRecording()}"
+            android:src="@drawable/ic_stop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/start" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item
+        android:id="@+id/AnimationFragment"
+        android:enabled="true"
+        android:icon="@drawable/menu_home"
+        android:title="@string/animation" />
+    <item
+        android:id="@+id/AudioRecorderFragment"
+        android:enabled="true"
+        android:icon="@drawable/menu_discovery"
+        android:title="@string/audio" />
+
+    <item
+        android:id="@+id/CameraFragment"
+        android:enabled="true"
+        android:icon="@drawable/menu_download"
+        android:title="@string/camera" />
+    <item
+        android:id="@+id/CoroutinesFragment"
+        android:enabled="true"
+        android:icon="@drawable/menu_profile"
+        android:title="@string/coroutines" />
+
+    <item
+        android:id="@+id/MainFragment"
+        android:enabled="true"
+        android:icon="@drawable/menu_home"
+        android:title="@string/main" />
+
+    <item
+        android:id="@+id/DialogTestFragment"
+        android:enabled="true"
+        android:icon="@drawable/menu_home"
+        android:title="@string/dialog" />
+    <item
+        android:id="@+id/LocalizationFragment"
+        android:enabled="true"
+        android:icon="@drawable/menu_discovery"
+        android:title="@string/localization" />
+    <item
+        android:id="@+id/NetworkApiFragment"
+        android:enabled="true"
+        android:icon="@drawable/menu_bookmark"
+        android:title="@string/network_api" />
+    <item
+        android:id="@+id/NetworkFragment"
+        android:enabled="true"
+        android:icon="@drawable/menu_download"
+        android:title="@string/network_connectivity" />
+    <item
+        android:id="@+id/ThemeFragment"
+        android:enabled="true"
+        android:icon="@drawable/menu_profile"
+        android:title="@string/themes" />
+
+    <item
+        android:id="@+id/VideoFragment"
+        android:enabled="true"
+        android:icon="@drawable/menu_profile"
+        android:title="@string/videos" />
+
+    <item
+        android:id="@+id/ViewpagerFragment"
+        android:enabled="true"
+        android:icon="@drawable/menu_profile"
+        android:title="@string/viewpager" />
+
+    <item
+        android:id="@+id/WorkManagerFragment"
+        android:enabled="true"
+        android:icon="@drawable/menu_profile"
+        android:title="@string/workmanager" />
+</menu>

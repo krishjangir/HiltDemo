@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_Sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_sheet_background"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="24dp">
+
+        <View
+            android:id="@+id/bar"
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/downloadIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/download"
+            app:layout_constraintEnd_toStartOf="@+id/downloadText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bar" />
+
+        <TextView
+            android:id="@+id/downloadText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="16dp"
+            android:text="Download File"
+            app:layout_constraintBottom_toBottomOf="@+id/downloadIcon"
+            app:layout_constraintStart_toEndOf="@+id/downloadIcon"
+            app:layout_constraintTop_toBottomOf="@+id/bar"
+            app:layout_constraintTop_toTopOf="@+id/downloadIcon" />
+
+        <ImageView
+            android:id="@+id/shareIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/profile"
+            app:layout_constraintEnd_toStartOf="@+id/shareText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/downloadIcon" />
+
+        <TextView
+            android:id="@+id/shareText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="16dp"
+            android:text="Share"
+            app:layout_constraintBottom_toBottomOf="@+id/shareIcon"
+            app:layout_constraintStart_toEndOf="@+id/shareIcon"
+            app:layout_constraintTop_toBottomOf="@+id/downloadText"
+            app:layout_constraintTop_toTopOf="@+id/shareIcon" />
+
+        <ImageView
+            android:id="@+id/copyIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/discovery"
+            app:layout_constraintEnd_toStartOf="@+id/copyText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shareIcon" />
+
+        <TextView
+            android:id="@+id/copyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="16dp"
+            android:text="Copy Link"
+            app:layout_constraintBottom_toBottomOf="@+id/copyIcon"
+            app:layout_constraintStart_toEndOf="@+id/copyIcon"
+            app:layout_constraintTop_toTopOf="@+id/copyIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

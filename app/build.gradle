@@ -1,0 +1,94 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    /* -------- Dagger-Hilt plugin -------- */
+    id 'com.google.dagger.hilt.android'
+    /* -------- Navigation plugin -------- */
+    id 'androidx.navigation.safeargs'
+}
+
+android {
+    namespace 'com.krishworld.hiltexample'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.krishworld.hiltexample"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://jsonplaceholder.typicode.com/\"")
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", "\"https://jsonplaceholder.typicode.com/\"")
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    dataBinding {
+        enabled true
+    }
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+}
+
+dependencies {
+    /* -------- Core dependencies -------- */
+    implementation CoreDependencies.coreKtx
+    implementation CoreDependencies.appcompat
+    implementation CoreDependencies.material
+    implementation CoreDependencies.constraintLayout
+    implementation CoreDependencies.workManager
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    /* -------- Core Test dependencies -------- */
+    testImplementation TestImplementation.junit
+    testImplementation TestImplementation.coroutinesTest
+    androidTestImplementation AndroidTestImplementation.junit
+    androidTestImplementation AndroidTestImplementation.espresso
+    /* -------- Unit Test dependencies -------- */
+    testImplementation TestImplementation.mockk
+    testImplementation TestImplementation.mockitoCore
+    testImplementation TestImplementation.robolectric
+    /* -------- Dagger-Hilt dependencies -------- */
+    implementation DaggerHilt.hilt
+    implementation DaggerHilt.hiltCompiler
+    kapt DaggerHilt.hiltAndroidCompiler
+    /* -------- Room dependencies -------- */
+    implementation RoomDb.roomRuntime
+    implementation RoomDb.roomRxjava
+    kapt RoomDb.roomKtx
+    /* -------- Retrofit dependencies -------- */
+    implementation Retrofit.retrofit
+    implementation Retrofit.retrofitConverterGson
+    implementation Retrofit.loggingInterceptor
+    /* -------- Glide dependencies -------- */
+    implementation Glide.glide
+    /*------Navigation dependencies------*/
+    implementation Navigation.navigationFragmentKtx
+    implementation Navigation.navigationUiKtx
+    /*------Exoplayer dependencies------*/
+    implementation Exoplayer.exoplayer
+    implementation Exoplayer.exoplayerUi
+    implementation Exoplayer.exoplayerDash
+    /*------Animation dependencies------*/
+    implementation Animation.lottie
+    implementation Animation.dynamicAnimation
+}
